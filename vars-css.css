@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --cor-primaria: #fff3db;
+    --cor-secundaria: #e7e4d5;
+    --cor-terciaria: #d3c8b4;
+    --cor-quartenaria: #c84648;
+    --cor-quintenaria: #703e3b;
+    --font-principal: "Nunito", sans-serif;
+}
