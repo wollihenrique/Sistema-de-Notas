@@ -1,0 +1,87 @@
+header .something a {
+    text-decoration: none;
+    color: var(--cor-quintenaria);
+}
+
+.box-conteiner {
+    background-color: var(--cor-secundaria);
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: #ffffa2;
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    height: 85%;
+    border: 1px solid var(--cor-primaria);
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) -4px 9px 25px -6px;
+}
+
+.note-title{
+    margin: 2%;
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.note-title label{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.note-title .note-text {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+}
+
+.note-content {
+    margin: 2%;
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 85%;
+}
+
+.note-content .note-text {
+    resize: none;
+    height: 80%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 20px;
+}
+
+.button {
+    padding: 1rem;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: var(--cor-quartenaria);
+    color: white;
+    width: 20%;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin: 0 40% 0 40%;
+}
+
+.button:hover {
+    background-color: var(--cor-quintenaria);
+    transition-duration: 1s;
+}
+
+
+
