@@ -42,8 +42,8 @@
                 <h2><?= $note->text ?></h2>
             </div>
             <div class="options">
-                <a href="/update-note.php?id=<?= $note->id?>">Editar</a>
-                <a href="">Excluir</a>
+                <a href="/create-note.php?id=<?= $note->id?>">Editar</a>
+                <a href="/delete-note.php?id=<?= $note->id?>">Excluir</a>
             </div>
         </div>    
         <?php endforeach; ?>

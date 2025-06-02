@@ -61,4 +61,16 @@ class NoteRepository
 
         return $hydratedList;
     }
+
+    public function deleteNote(int $id): bool {
+        $query = "DELETE FROM notas WHERE id = ?;";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(1, $id);
+        
+        if($statement->execute()){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
