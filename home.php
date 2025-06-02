@@ -1,5 +1,11 @@
 <?php
-    
+    require __DIR__ . '/config.php';
+    require __DIR__ . '/src/Models/Note.php';
+    require __DIR__ . '/src/Repositorys/NoteRepository.php';
+
+    $noteRepository = new NoteRepository($pdo);
+
+    $allNotes = $noteRepository->getAllNotes();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,49 +35,18 @@
         </nav>
     </header>
     <div class="notes-conteiner">
+        <?php foreach($allNotes as $note): ?>
         <div class="note">
             <p>Uploaded by:</p>
             <div class="note-text">
-                <h2>Write a note!</h2>
+                <h2><?= $note->text ?></h2>
             </div>
             <div class="options">
-                <a href="">Editar</a>
+                <a href="/update-note.php?id=<?= $note->id?>">Editar</a>
                 <a href="">Excluir</a>
             </div>
-        </div>
-
-        <div class="note">
-            <p>Uploaded by:</p>
-            <div class="note-text">
-                <h2>I love you!</h2>
-            </div>
-            <div class="options">
-                <a href="">Editar</a>
-                <a href="">Excluir</a>
-            </div>
-        </div>
-
-        <div class="note">
-            <p>Uploaded by:</p>
-            <div class="note-text">
-                <h2>You need to study!</h2>
-            </div>
-            <div class="options">
-                <a href="">Editar</a>
-                <a href="">Excluir</a>
-            </div>
-        </div>
-
-        <div class="note">
-            <p>Uploaded by:</p>
-            <div class="note-text">
-                <h2>Oh shit, here we go again!</h2>
-            </div>
-            <div class="options">
-                <a href="">Editar</a>
-                <a href="">Excluir</a>
-            </div>
-        </div>
+        </div>    
+        <?php endforeach; ?>
 
     </div>
     <footer>

@@ -20,7 +20,7 @@ if($text === false || null){
     exit();
 }
 
-$note = new Note($title, $text);
+$note = new Note(null, $title, $text);
 $success = $noteRepository->createNote($note);
 
 if($success === false){
