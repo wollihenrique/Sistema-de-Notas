@@ -8,7 +8,7 @@ $noteRepository = new NoteRepository($pdo);
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
 if($id != null|false){
-    $noteRepository->deleteNote($id);
+    $noteRepository->DeleteNote($id);
     header('Location: /home.php?success=1');
     exit;
 } else {

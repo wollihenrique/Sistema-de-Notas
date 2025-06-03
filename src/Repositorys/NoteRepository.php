@@ -62,11 +62,25 @@ class NoteRepository
         return $hydratedList;
     }
 
-    public function deleteNote(int $id): bool {
+    public function DeleteNote(int $id): bool {
         $query = "DELETE FROM notas WHERE id = ?;";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(1, $id);
-        
+
+        if($statement->execute()){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function UpdateNote(Note $note){
+        $query = "UPDATE notas SET title = :title, text = :text WHERE id = :id;";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':title', $note->title);
+        $statement->bindValue(':text', $note->text);
+        $statement->bindValue(':id', $note->id);
+
         if($statement->execute()){
             return true;
         } else {

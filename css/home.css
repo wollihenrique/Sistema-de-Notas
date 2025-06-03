@@ -78,6 +78,7 @@ header .navigation i {
     font-weight: 500;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.2) -4px 9px 25px -6px;
+    padding: 20px;
 }
 
 .note .options {
@@ -106,4 +107,5 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: var(--cor-terciaria);
+    margin-top: 7vh;
 }

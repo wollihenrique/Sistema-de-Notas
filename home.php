@@ -30,7 +30,7 @@
             <span>&lt;/wolli&gt;</span>
         </div>
         <nav class="navigation">
-            <a href="/create-note.html"><i class="fa-solid fa-plus"></i></a>
+            <a href="/form-note.php"><i class="fa-solid fa-plus"></i></a>
             <a href="/index.html"><i class="fa-solid fa-right-from-bracket"></i></a>
         </nav>
     </header>
@@ -42,7 +42,7 @@
                 <h2><?= $note->text ?></h2>
             </div>
             <div class="options">
-                <a href="/create-note.php?id=<?= $note->id?>">Editar</a>
+                <a href="/form-note.php?id=<?= $note->id?>">Editar</a>
                 <a href="/delete-note.php?id=<?= $note->id?>">Excluir</a>
             </div>
         </div>    
