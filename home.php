@@ -37,10 +37,19 @@
     <div class="notes-conteiner">
         <?php foreach($allNotes as $note): ?>
         <div class="note">
+
             <p>Uploaded by:</p>
-            <div class="note-text">
-                <h2><?= $note->text ?></h2>
+            
+            <a href="/form-note.php?id=<?= $note->id?>">
+                <div class="note-text">
+                    <h2><?= $note->text ?></h2>
+                </div>
+            </a>
+
+            <div class="title">
+                <h2><?= $note->title ?></h2>
             </div>
+
             <div class="options">
                 <a href="/form-note.php?id=<?= $note->id?>">Editar</a>
                 <a href="/delete-note.php?id=<?= $note->id?>">Excluir</a>

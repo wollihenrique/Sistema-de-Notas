@@ -3,6 +3,7 @@
 body {
     background-color: var(--cor-secundaria);
     font-family: var(--font-principal);
+    overflow-x: hidden;
 }
 
 header {
@@ -67,6 +68,11 @@ header .navigation i {
     margin-bottom: 5px;
 }
 
+.note a{
+    text-decoration: none;
+     color: black;
+}
+
 .note .note-text {
     background-color: #ffffa2;
     width: 100%;
@@ -78,7 +84,23 @@ header .navigation i {
     font-weight: 500;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.2) -4px 9px 25px -6px;
-    padding: 20px;
+    padding: 3%;
+    cursor: pointer;
+}
+
+.note .note-text:hover {
+    background-color: #ffe591;
+    transition-duration: 1s;
+}
+.note .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.note .title h2 {
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .note .options {
