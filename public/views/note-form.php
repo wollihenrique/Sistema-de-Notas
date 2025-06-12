@@ -1,11 +1,6 @@
-<?php
-    require __DIR__ . '/config.php';
-    require __DIR__ . '/src/Models/Note.php';
-    require __DIR__ . '/src/Repositorys/NoteRepository.php';
+<?php 
 
-    $noteRepository = new NoteRepository($pdo);
-
-    $allNotes = $noteRepository->getAllNotes();
+/** @var \App\Models\Note $note */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,9 +10,9 @@
     <title>Home | Sistema de Notas</title>
     <!--CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/vars-css.css">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/../css/reset.css">
+    <link rel="stylesheet" href="/../css/vars-css.css">
+    <link rel="stylesheet" href="/../css/create-note.css">
 
     <!--FONTES-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,36 +22,34 @@
 <body>
     <header>
         <div class="something">
-            <span>&lt;/wolli&gt;</span>
+            <a href="/home.html"><span>&lt;/wolli&gt;</span></a>
         </div>
         <nav class="navigation">
             <a href="/form-note.php"><i class="fa-solid fa-plus"></i></a>
             <a href="/index.html"><i class="fa-solid fa-right-from-bracket"></i></a>
         </nav>
     </header>
-    <div class="notes-conteiner">
-        <?php foreach($allNotes as $note): ?>
-        <div class="note">
-
-            <p>Uploaded by:</p>
-            
-            <a href="/form-note.php?id=<?= $note->id?>">
-                <div class="note-text">
-                    <h2><?= $note->text ?></h2>
-                </div>
-            </a>
-
-            <div class="title">
-                <h2><?= $note->title ?></h2>
+    <div class="box-conteiner">
+        <form action="" method="post">
+            <div class="note-title">
+                <label for="title">Title</label>
+                <input 
+                    class="note-text" 
+                    value="<?= $note->title ?? '';?>"
+                    type="text" 
+                    name="title" 
+                    placeholder="Type your note's title..." required>
             </div>
-
-            <div class="options">
-                <a href="/form-note.php?id=<?= $note->id?>">Editar</a>
-                <a href="/delete-note.php?id=<?= $note->id?>">Excluir</a>
+            <div class="note-content">
+                <label for="text">Text</label>
+                <textarea 
+                    maxlength="200" 
+                    class="note-text" 
+                    name="text" 
+                    placeholder="Type your note..." required><?= $note->text ?? '';?></textarea>
             </div>
-        </div>    
-        <?php endforeach; ?>
-
+            <input type="submit" value="Submit" class="button">
+        </form>
     </div>
     <footer>
         <p>Created by Wallace Henrique</p>

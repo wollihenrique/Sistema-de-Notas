@@ -1,15 +1,21 @@
 <?php
 
+namespace App\Repositories;
+
+use App\Models\Note;
+use PDO;
+
 class NoteRepository
 {
     private PDO $pdo;
+    public Note $note;
 
     public function __construct(PDO $pdo)
     {
         $this->pdo = $pdo;
     }
 
-    public function createNote(Note $note): ?Note
+    public function createNote(Note $note): bool
     {
         $query = "INSERT INTO notas (title, text) VALUES (?,?);";
         $statement = $this->pdo->prepare($query);
@@ -19,10 +25,11 @@ class NoteRepository
 
         if($success){
             $id = $this->pdo->lastInsertId();
-            return new Note($id, $note->title, $note->text);
+            $this->note = new Note($id, $note->title, $note->text);
+            return true;
+        } else {
+            return false;
         }
-
-        return null;
     }
 
     public function getAllNotes(): ?array

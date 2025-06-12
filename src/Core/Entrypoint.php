@@ -1,9 +1,13 @@
 <?php
 
+namespace App\Core;
+
+use App\Repositories\NoteRepository;
+
 class Entrypoint
 {
 
-    public function __construct(private array $routes){
+    public function __construct(private array $routes, private NoteRepository $noteRepository){
 
     }
     public function handleRequest()
@@ -13,11 +17,13 @@ class Entrypoint
 
         if(isset($this->routes[$uri])){
             $route = $this->routes[$uri][$verb];
-            $controller = new $route['controller'];
-            $method = new $route['method'];
+            $controllerClass = $route['controller'];
+            $method = $route['method'];
+
+            $controller = new $controllerClass($this->noteRepository);
 
             if(method_exists($controller, $method)){
-                //$controller->$method();
+                $controller->$method();
             } else {
                 $this->sendHttpMessage(405);
             }

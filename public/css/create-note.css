@@ -1,4 +1,54 @@
+@import url('vars-css.css');
+
+body {
+    background-color: var(--cor-secundaria);
+    font-family: var(--font-principal);
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    border-bottom: 1px solid var(--cor-primaria);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-quintenaria);
+}
+ 
+header .something {
+    font-family: var(--font-principal);
+    font-size: 30px;
+    font-weight: 800;
+    margin-left: 3.5%;
+    cursor: pointer;
+    color: var(--cor-quintenaria);
+}
+
 header .something a {
+    text-decoration: none;
+    color: var(--cor-quintenaria);
+    font-weight: 800;
+    font-size: 30px;
+}
+
+header .navigation a {
+    text-decoration: none;
+}
+
+
+header .navigation {
+    width: 7%;
+    font-size: 30px;
+    font-weight: 800;
+    margin-right: 3.5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .navigation i {
+    cursor: pointer;
     text-decoration: none;
     color: var(--cor-quintenaria);
 }
@@ -83,5 +133,12 @@ form {
     transition-duration: 1s;
 }
 
-
-
+footer {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-terciaria);
+    margin-top: 7vh;
+}
